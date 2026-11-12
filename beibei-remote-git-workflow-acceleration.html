@@ -46,7 +46,7 @@
       <section style="font-size:15px; line-height:1.85; color:#d1d5db;">
         
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">一、分布式协同中巨型 Git 代码仓库的跨洋克隆痛点</h2>
-        <p>现代大型软件工程(如Linux内核、Chromium、LLVM或深度学习框架)的代码仓库，其.git版本库历史动辄数GB甚至数十GB。当分布式开发团队尝试通过跨洋公网从GitHub或GitLab拉取这些巨型项目时，常常在Receiving objects进度条停滞在99%时遭遇fatal: the remote end hung up unexpectedly的崩溃报错。许多跨国研发团队在引入高效的<a href="https://dajichang.mom/" target="_blank" style="color:#a5b4fc; font-weight:700; text-decoration:underline;">海外网络加速方案</a>时，首要目标就是根治大代码仓库跨国拉取中的偶发中断，让工程团队的协作心流时刻保持高效。</p>
+        <p>现代大型软件工程(如Linux内核、Chromium、LLVM或深度学习框架)的代码仓库，其.git版本库历史动辄数GB甚至数十GB。当分布式开发团队尝试通过跨洋公网从GitHub或GitLab拉取这些巨型项目时，常常在Receiving objects进度条停滞在99%时遭遇fatal: the remote end hung up unexpectedly的崩溃报错。许多跨国研发团队在引入高效的<a href="https://dajichang.mom/" target="_blank" style="color:#a5b4fc; font-weight:700; text-decoration:underline;">持续集成与代码分发</a>时，首要目标就是根治大代码仓库跨国拉取中的偶发中断，让工程团队的协作心流时刻保持高效。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">二、Git 协议底层剖析与浅克隆(--depth 1)按需拉取</h2>
         <p>在很多日常开发与自动化构建(CI)场景中，开发者往往只需要当前最新的代码快照，而无需下载过去十年的所有提交历史。通过在git clone命令中添加--depth 1参数执行浅克隆，或者指定--single-branch仅同步单一目标分支，可以将初次拉取的数据体积大幅缩减90%以上，配合高速专线通道，让大型仓库的初始化在几十秒内瞬间完成。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">三、配置 SSH ProxyCommand 实现毫秒级响应</h2>
